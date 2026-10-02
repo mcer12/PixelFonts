@@ -9,11 +9,9 @@ The library is compatible with AdafruitGFX, u8g2 to be added later.
 
 ## Language support
 
-PixelFont includes extended latin but you need to use a [UTF-8 fork of AdafruitGFX](https://github.com/DoomHammer/Adafruit-GFX-Library/tree/enable-utf-8). Supported languages are: English,
-Spanish, French, Italian, Czech and more. With the mainline AdafruitGFX, the extended latin won't work.
+There are two options for each font - english version, which works with basic AdafruitGFX library and extended latin version which requires [UTF-8 fork of AdafruitGFX](https://github.com/DoomHammer/Adafruit-GFX-Library/tree/enable-utf-8). Supported languages are: English, Spanish, French, Italian, Czech and more. Using extended latin version with standard library still works for english glyphs but because of extra data, it's taking more memory space, so it's recommended to use english version with it.
 
-Please note that I have personally hand-crafted only the Czech special characters. Other extended Latin glyphs are AI
-generated, so PRs with corrections from native speakers are welcome!
+Please note that I have personally hand-crafted only the Czech special characters. Other extended Latin glyphs are AI generated, so PRs with corrections from native speakers are welcome!
 
 ## Usage
 
