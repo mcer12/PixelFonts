@@ -1,5 +1,5 @@
 // Characters: space ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ 0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 ¡ ª « ¬ ° µ ¶ º » ¿ ß à á â ä æ ç è é ê ë ì í î ï ñ ò ó ô ö ù ú û ü ý ÿ č ď ě ň œ ř š ť ů ž
-// Checksum: d93fdb43eb204991
+// Checksum: 9cf07b9dcf7f4379
 #pragma once
 #include <Adafruit_GFX.h>
 
@@ -110,7 +110,7 @@ const uint8_t pixelfont_3d_condensed_extended_latin_7x5_thin_Bitmaps[] PROGMEM =
 };
 
 const GFXglyph pixelfont_3d_condensed_extended_latin_7x5_thin_Glyphs[] PROGMEM = {
-  {     0,   0,   0,   6,    0,    0 },   // 0x20 ' '
+  {     0,   0,   0,   3,    0,    0 },   // 0x20 ' '
   {     0,   4,  10,   4,    0,  -11 },   // 0x21 '!'
   {     5,   6,   5,   6,    0,  -11 },   // 0x22 '"'
   {     9,   8,  10,   8,    0,  -11 },   // 0x23 '#'

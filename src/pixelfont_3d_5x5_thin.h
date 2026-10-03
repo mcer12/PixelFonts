@@ -1,5 +1,5 @@
 // Characters: space ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~
-// Checksum: 0b99eb3c46732927
+// Checksum: a1aa2a43d87245b4
 #pragma once
 #include <Adafruit_GFX.h>
 
@@ -58,7 +58,7 @@ const uint8_t pixelfont_3d_5x5_thin_Bitmaps[] PROGMEM = {
 };
 
 const GFXglyph pixelfont_3d_5x5_thin_Glyphs[] PROGMEM = {
-  {     0,   0,   0,   7,    0,    0 },   // 0x20 ' '
+  {     0,   0,   0,   4,    0,    0 },   // 0x20 ' '
   {     0,   4,   8,   5,    0,   -8 },   // 0x21 '!'
   {     4,   6,   5,   7,    0,   -8 },   // 0x22 '"'
   {     8,   8,   8,   9,    0,   -8 },   // 0x23 '#'
