@@ -1,28 +1,64 @@
 ![PixelFonts - Pixel fonts for tiny displays](images/title.png)
 
-PixelFont is a family of AdafruitGFX compatible fonts, hand crafted for tiny low-res displays. The fonts are designed
-to be slender and condensed to fit as much text on a line as possible. And to also look awesome.
+**PixelFont** is a family of **AdafruitGFX & u8g2 compatible** fonts, **hand crafted for tiny low-res displays**. The fonts are designed
+to be **slender and condensed** to fit as much text on a line as possible. And to also look awesome.
 
-You can also use AI to scale the fonts up to add spacing between pixels, makes pixels larger, rounded etc. So it’s a great way to make a faux-low-res display or a retro arcade kind of look.
-
-The library is compatible with AdafruitGFX, u8g2 to be added later.
+You can also use AI to scale the fonts up, add spacing between pixels, makes pixels larger, rounded etc. So it’s a great way to make a faux-low-res display or a retro arcade kind of look.
 
 ## Language support
 
-There are two options for each font - english version, which works with basic AdafruitGFX library and extended latin version which requires [UTF-8 fork of AdafruitGFX](https://github.com/DoomHammer/Adafruit-GFX-Library/tree/enable-utf-8). Supported languages are: English, Spanish, French, Italian, Czech and more. Using extended latin version with standard library still works for english glyphs but because of extra data, it's taking more memory space, so it's recommended to use english version with it.
+Supported languages are: **English, Spanish, French, Italian, Czech** and more. 
 
 Please note that I have personally hand-crafted only the Czech special characters. Other extended Latin glyphs are AI generated, so PRs with corrections from native speakers are welcome!
 
 ## Usage
 
+### AdafruitGFX
+
+There are two options for each font - **english version**, which works with basic AdafruitGFX library and **extended latin version** which requires **[UTF-8 fork of AdafruitGFX](https://github.com/DoomHammer/Adafruit-GFX-Library/tree/enable-utf-8)**. 
+
+Using extended latin version with standard library still works for english glyphs but because of extra data, it's taking more memory space, so it's recommended to use english version with it.
+
 ```cpp
+#include <Adafruit_GFX.h>
 #include <PixelFonts.h>   // every font; the ones you do not use take no flash
 
-display.setFont(&pixelfont_13x7_semibold);
+// This is required to make extended latin work, using forked Adafruit-GFX is required:
+// https://github.com/DoomHammer/Adafruit-GFX-Library/tree/enable-utf-8
+// Remove this line if with stock AdafruitGFX and english font variants
+display.utf8(true);
+
+display.setFont(&pixelfont_extended_latin_13x7_semibold);
 display.setTextColor(BLACK);
 display.setCursor(10, 30);
 display.print("Temperature 23.5");
 ```
+
+### u8g2
+
+The same fonts in **u8g2 format**: the font name + `_u8g2`. You can use english fonts or extended latin fonts with no limitations.
+
+```cpp
+#include <U8g2lib.h>
+#include <PixelFontsU8g2.h>   // every u8g2 font; the ones you do not use take no flash
+
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
+
+u8g2.begin();
+u8g2.setFontMode(1);
+u8g2.setFont(pixelfont_13x7_semibold_u8g2);
+u8g2.drawStr(0, 20, "Temperature 23.5");
+u8g2.setFont(pixelfont_extended_latin_13x7_semibold_u8g2);
+u8g2.drawUTF8(0, 20 + PIXELFONT_EXTENDED_LATIN_13X7_SEMIBOLD_U8G2_LINE_HEIGHT, "Příliš žluťoučký kůň");
+u8g2.sendBuffer();
+```
+
+Each u8g2 font comes with its line height, e.g. `PIXELFONT_13X7_SEMIBOLD_U8G2_LINE_HEIGHT`.
+
+### BDF
+
+The `bdf/` folder has **every font as a BDF file** (Unicode encoded), for u8g2's `bdfconv`, FontForge, the LVGL font
+converter and other tools. `FONT_ASCENT` + `FONT_DESCENT` is the line height.
 
 ## Fonts
 
@@ -84,4 +120,4 @@ stroke width, **English** = ASCII only, **Extended Latin** = ASCII + accented le
 | 24 px | 3px | `pixelfont_3d_condensed_21x11_bold` | `pixelfont_3d_condensed_extended_latin_21x11_bold` |
 
 ## Notes
-Glyph data in a simple txt form is included, so you can use AI to generate different formats than AdafruitGFX, for example u8g2.
+Glyph data in a simple txt form is included, so you can use AI to generate any bitmap / font format.
