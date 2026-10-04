@@ -36,6 +36,18 @@ display.setCursor(10, 30);
 display.print("Temperature 23.5");
 ```
 
+**Scaling up for a low-res look:** `setTextSize()` draws every font pixel as a square block, so a small font turns
+into big, chunky pixel text with no extra flash:
+
+```cpp
+display.setFont(&pixelfont_9x5_thin);
+display.setTextSize(3);   // each font pixel becomes a 3x3 block: 27 px tall capitals
+display.setCursor(0, 40);
+display.print("23.5");
+```
+
+`setTextSize(x, y)` scales width and height separately; the line height scales with it.
+
 ### u8g2
 
 The same fonts in **u8g2 format**: the font name + `_u8g2`. You can use english fonts or extended latin fonts with no limitations.
@@ -88,6 +100,8 @@ stroke width, **English** = ASCII only, **Extended Latin** = ASCII + accented le
 | 13 px | 2px | `pixelfont_13x7_semibold` | `pixelfont_extended_latin_13x7_semibold` |
 | 15 px | 1px | `pixelfont_15x5_thin` | `pixelfont_extended_latin_15x5_thin` |
 | 15 px | 2px | `pixelfont_15x5_semibold` | `pixelfont_extended_latin_15x5_semibold` |
+| 15 px | 1px | `pixelfont_15x7_thin` | `pixelfont_extended_latin_15x7_thin` |
+| 15 px | 2px | `pixelfont_15x7_semibold` | `pixelfont_extended_latin_15x7_semibold` |
 | 17 px | 1px | `pixelfont_17x5_thin` | `pixelfont_extended_latin_17x5_thin` |
 | 17 px | 2px | `pixelfont_17x5_semibold` | `pixelfont_extended_latin_17x5_semibold` |
 | 17 px | 1px | `pixelfont_17x7_thin` | `pixelfont_extended_latin_17x7_thin` |
@@ -118,6 +132,10 @@ stroke width, **English** = ASCII only, **Extended Latin** = ASCII + accented le
 | 18 px | 1px | `pixelfont_3d_condensed_15x5_thin` | `pixelfont_3d_condensed_extended_latin_15x5_thin` |
 | 18 px | 2px | `pixelfont_3d_15x5_semibold` | `pixelfont_3d_extended_latin_15x5_semibold` |
 | 18 px | 2px | `pixelfont_3d_condensed_15x5_semibold` | `pixelfont_3d_condensed_extended_latin_15x5_semibold` |
+| 18 px | 1px | `pixelfont_3d_15x7_thin` | `pixelfont_3d_extended_latin_15x7_thin` |
+| 18 px | 1px | `pixelfont_3d_condensed_15x7_thin` | `pixelfont_3d_condensed_extended_latin_15x7_thin` |
+| 18 px | 2px | `pixelfont_3d_15x7_semibold` | `pixelfont_3d_extended_latin_15x7_semibold` |
+| 18 px | 2px | `pixelfont_3d_condensed_15x7_semibold` | `pixelfont_3d_condensed_extended_latin_15x7_semibold` |
 | 20 px | 1px | `pixelfont_3d_17x5_thin` | `pixelfont_3d_extended_latin_17x5_thin` |
 | 20 px | 1px | `pixelfont_3d_condensed_17x5_thin` | `pixelfont_3d_condensed_extended_latin_17x5_thin` |
 | 20 px | 2px | `pixelfont_3d_17x5_semibold` | `pixelfont_3d_extended_latin_17x5_semibold` |
