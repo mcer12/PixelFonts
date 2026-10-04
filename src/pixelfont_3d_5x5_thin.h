@@ -1,5 +1,5 @@
-// Characters: space ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~
-// Checksum: a1aa2a43d87245b4
+// Characters: space ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ 0x89
+// Checksum: 07b08cb9955baefb
 #pragma once
 #include <Adafruit_GFX.h>
 
@@ -54,7 +54,7 @@ const uint8_t pixelfont_3d_5x5_thin_Bitmaps[] PROGMEM = {
   0xBB, 0xFF, 0x77, 0xEE, 0xBB, 0xD7, 0x6F, 0x2E, 0x2C, 0x3C, 0x1C, 0xFD,
   0x0F, 0xDB, 0x7D, 0xF0, 0xFF, 0xBF, 0x7B, 0x39, 0xEF, 0x9B, 0x37, 0xCF,
   0xEB, 0xBB, 0xBB, 0xF7, 0xF2, 0x6C, 0xDB, 0xCE, 0x7F, 0xDE, 0xF0, 0x9E,
-  0xAB, 0xF3, 0x7F, 0x0F,
+  0xAB, 0xF3, 0x7F, 0x0F, 0x7C, 0x8F, 0x7C, 0x7D, 0xC8, 0xDF, 0x9F,
 };
 
 const GFXglyph pixelfont_3d_5x5_thin_Glyphs[] PROGMEM = {
@@ -152,9 +152,20 @@ const GFXglyph pixelfont_3d_5x5_thin_Glyphs[] PROGMEM = {
   {   582,   6,   8,   7,    0,   -8 },   // 0x7B '{'
   {   588,   4,   8,   5,    0,   -8 },   // 0x7C '|'
   {   592,   6,   8,   7,    0,   -8 },   // 0x7D '}'
-  {   598,   8,   6,   9,    0,   -7 }    // 0x7E '~'
+  {   598,   8,   6,   9,    0,   -7 },   // 0x7E '~'
+  {     0,   0,   0,   0,    0,    0 },   // 0x7F 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x80 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x81 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x82 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x83 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x84 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x85 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x86 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x87 'non-printable'
+  {     0,   0,   0,   0,    0,    0 },   // 0x88 'non-printable'
+  {   604,   7,   8,   8,    0,   -8 }    // 0x89 'non-printable'
 };
 
 const GFXfont pixelfont_3d_5x5_thin PROGMEM = {
   (uint8_t  *)pixelfont_3d_5x5_thin_Bitmaps,
-  (GFXglyph *)pixelfont_3d_5x5_thin_Glyphs, 0x20, 0x7E, 9};
+  (GFXglyph *)pixelfont_3d_5x5_thin_Glyphs, 0x20, 0x89, 9};

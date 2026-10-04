@@ -9,7 +9,9 @@ You can also use AI to scale the fonts up, add spacing between pixels, makes pix
 
 Supported languages are: **English, Spanish, French, Italian, Czech** and more. 
 
-Please note that I have personally hand-crafted only the Czech special characters. Other extended Latin glyphs are AI generated, so PRs with corrections from native speakers are welcome!
+NOTE 1: Accented characters are available for **lowercase letters only** - capital letters with accents are not included as this requires modification of the letters.
+
+NOTE 2: I have personally hand-crafted only the Czech special characters. Other extended Latin glyphs are AI generated, so PRs with corrections from native speakers are welcome!
 
 ## Usage
 
@@ -25,7 +27,7 @@ Using extended latin version with standard library still works for english glyph
 
 // This is required to make extended latin work, using forked Adafruit-GFX is required:
 // https://github.com/DoomHammer/Adafruit-GFX-Library/tree/enable-utf-8
-// Remove this line if with stock AdafruitGFX and english font variants
+// Remove this line with stock AdafruitGFX and english font variants
 display.utf8(true);
 
 display.setFont(&pixelfont_extended_latin_13x7_semibold);
@@ -68,7 +70,7 @@ Names follow `pixelfont[_3d | _3d_condensed][_extended_latin]_ROWSxCOLS_WEIGHT`:
 - `WEIGHT` - stroke width: `thin` = 1px, `semibold` = 2px, `bold` = 3px
 - `_3d` - outline + shadow version, 3 px taller, 1 px gap between characters and lines
 - `_3d_condensed` - the same 3D version with no gap between characters and lines
-- `_extended_latin` - adds the accented letters and punctuation (see Language support)
+- `_extended_latin` - adds the accented lowercase letters and punctuation (see Language support)
 
 In the table: **Height** = pixel height of the capitals (3D versions include the outline and shadow), **Weight** =
 stroke width, **English** = ASCII only, **Extended Latin** = ASCII + accented letters.
@@ -84,8 +86,12 @@ stroke width, **English** = ASCII only, **Extended Latin** = ASCII + accented le
 | 13 px | 1px | `pixelfont_13x5_thin` | `pixelfont_extended_latin_13x5_thin` |
 | 13 px | 1px | `pixelfont_13x7_thin` | `pixelfont_extended_latin_13x7_thin` |
 | 13 px | 2px | `pixelfont_13x7_semibold` | `pixelfont_extended_latin_13x7_semibold` |
+| 15 px | 1px | `pixelfont_15x5_thin` | `pixelfont_extended_latin_15x5_thin` |
+| 15 px | 2px | `pixelfont_15x5_semibold` | `pixelfont_extended_latin_15x5_semibold` |
 | 17 px | 1px | `pixelfont_17x5_thin` | `pixelfont_extended_latin_17x5_thin` |
 | 17 px | 2px | `pixelfont_17x5_semibold` | `pixelfont_extended_latin_17x5_semibold` |
+| 17 px | 1px | `pixelfont_17x7_thin` | `pixelfont_extended_latin_17x7_thin` |
+| 17 px | 2px | `pixelfont_17x7_semibold` | `pixelfont_extended_latin_17x7_semibold` |
 | 17 px | 3px | `pixelfont_17x7_bold` | `pixelfont_extended_latin_17x7_bold` |
 | 21 px | 1px | `pixelfont_21x11_thin` | `pixelfont_extended_latin_21x11_thin` |
 | 21 px | 3px | `pixelfont_21x11_bold` | `pixelfont_extended_latin_21x11_bold` |
@@ -108,10 +114,18 @@ stroke width, **English** = ASCII only, **Extended Latin** = ASCII + accented le
 | 16 px | 1px | `pixelfont_3d_condensed_13x7_thin` | `pixelfont_3d_condensed_extended_latin_13x7_thin` |
 | 16 px | 2px | `pixelfont_3d_13x7_semibold` | `pixelfont_3d_extended_latin_13x7_semibold` |
 | 16 px | 2px | `pixelfont_3d_condensed_13x7_semibold` | `pixelfont_3d_condensed_extended_latin_13x7_semibold` |
+| 18 px | 1px | `pixelfont_3d_15x5_thin` | `pixelfont_3d_extended_latin_15x5_thin` |
+| 18 px | 1px | `pixelfont_3d_condensed_15x5_thin` | `pixelfont_3d_condensed_extended_latin_15x5_thin` |
+| 18 px | 2px | `pixelfont_3d_15x5_semibold` | `pixelfont_3d_extended_latin_15x5_semibold` |
+| 18 px | 2px | `pixelfont_3d_condensed_15x5_semibold` | `pixelfont_3d_condensed_extended_latin_15x5_semibold` |
 | 20 px | 1px | `pixelfont_3d_17x5_thin` | `pixelfont_3d_extended_latin_17x5_thin` |
 | 20 px | 1px | `pixelfont_3d_condensed_17x5_thin` | `pixelfont_3d_condensed_extended_latin_17x5_thin` |
 | 20 px | 2px | `pixelfont_3d_17x5_semibold` | `pixelfont_3d_extended_latin_17x5_semibold` |
 | 20 px | 2px | `pixelfont_3d_condensed_17x5_semibold` | `pixelfont_3d_condensed_extended_latin_17x5_semibold` |
+| 20 px | 1px | `pixelfont_3d_17x7_thin` | `pixelfont_3d_extended_latin_17x7_thin` |
+| 20 px | 1px | `pixelfont_3d_condensed_17x7_thin` | `pixelfont_3d_condensed_extended_latin_17x7_thin` |
+| 20 px | 2px | `pixelfont_3d_17x7_semibold` | `pixelfont_3d_extended_latin_17x7_semibold` |
+| 20 px | 2px | `pixelfont_3d_condensed_17x7_semibold` | `pixelfont_3d_condensed_extended_latin_17x7_semibold` |
 | 20 px | 3px | `pixelfont_3d_17x7_bold` | `pixelfont_3d_extended_latin_17x7_bold` |
 | 20 px | 3px | `pixelfont_3d_condensed_17x7_bold` | `pixelfont_3d_condensed_extended_latin_17x7_bold` |
 | 24 px | 1px | `pixelfont_3d_21x11_thin` | `pixelfont_3d_extended_latin_21x11_thin` |
